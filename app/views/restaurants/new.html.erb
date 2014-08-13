@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h1>Add a restaurant</h1> <br>
+  <p> <%= link_to "Get back to the restaurant's list", restaurants_path%></p>
+</div>
+
+<%= form_for @restaurant, html: {class: "form-inline", role:"form"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control"%>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: "form-control"%>
+  <%= f.select :category, Restaurant::CATEGORIES, {}, class: "form-control" %>
+  <%= f.submit :class => "btn btn-primary"%>
+<% end %>
